@@ -1,0 +1,33 @@
+.test { color: #000000;
+   font-family: sans-serif;
+   font-style: italic;
+   font-weight: lighter;
+   letter-spacing: 5px;
+   padding: 50px;
+
+}
+
+.header { color:white;
+   font-size: 16px;
+   font-family: serif;
+   font-style: italic;
+   letter-spacing: 0px;
+   padding: 15px;
+
+}
+
+.body { color: #A5F3FA;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-style: italic;
+  letter-spacing: 0px;
+  padding: 15px;
+  }
+
+.divider { color: #A5F3FA;
+  font-size: 50px;
+  font-family: serif;
+  font-style: italic;
+  letter-spacing: 0px;
+  padding: 15px;
+    }
