@@ -1,6 +1,6 @@
-<style>
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:700,700i&display=swap');
-</style>
+@import url('https://fonts.googleapis.com/css?family=Cute+Font&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Jura:600&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -35,6 +35,10 @@ body {
   margin: 20px;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.2em;
+	display: flex;
+	justify-content: center;
+	background: rgb(78,187,233);
+	background: linear-gradient(0deg, rgba(78,187,233,1) 0%, rgba(226,247,255,1) 100%);
 }
 
 ol, ul {
@@ -54,6 +58,22 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+h1 {
+	font-family: 'Jura', sans-serif;
+	color: white;
+	font-size: 3vmin;
+	text-align: center;
+	padding: 0, 5vw, 0, 5vw;
+	text-shadow: 1px 1px 2px grey;
+}
+
+p {
+  font-family: serif;
+	color: black;
+	font-size: 4vmin;
+	text-align: center;
 }
 
 container {
@@ -97,7 +117,54 @@ div.submit a{
 }
 
 div.intro {
-	background-image: url('./img/bg.jpg');
+	background-image: url('./img/bg.png');
+	background-size: cover;
 	width: 100vw;
 	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+div.intro div.logo {
+	background-image: url("./img/logo_empty.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 80vw;
+	height: 80vh;
+}
+
+div.listofartistsandthetext {
+	margin-top: 100vh;
+	width: 80vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-bottom: 10vh;
+}
+
+p.thisiswhatitabout {
+	font-size: 2.5vmin!important;
+	width: 40vw;
+padding-top: 10vh;
+padding-bottom: 10vh;
+font-style: italic;
+color: #3f3f3f;
+}
+
+.nasty{
+	width: 40vw;
+	border-top: solid 3px white;
+	padding-bottom: 10vh;
+}
+
+em {
+	color: white;
+	font-weight: 900;
 }
