@@ -205,6 +205,17 @@ div.pop-up {
   font-size: 1.5em;
 }
 
+div.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+img.prof {
+  height: 1.3em;
+  padding-right: 10px;
+}
+
 .modal-content h6{
   font-family: 'VT323', monospace;
   font-size: 1.3em;
