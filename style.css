@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cute+Font&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Jura:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.2em;
+  overflow-x: hidden;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1 {
+  font-family: 'Jura', sans-serif;
+  color: white;
+  font-size: 3vmin;
+  text-align: center;
+  padding: 0, 5vw, 0, 5vw;
+  text-shadow: 1px 1px 2px grey;
+}
+
+p {
+  font-family: 'Orbitron', sans-serif;
+  word-wrap: break-word;
+}
+
+section.video {
+  height: 100vh;
+}
+
+div.scroller {
+  height: 100px;
+  width: 100vw;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroller h3 {
+  font-size: 3em;
+  font-family: 'VT323', monospace;
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 100px;
+  text-align: center;
+  /* Starting position */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  -moz-animation: example1 15s linear infinite;
+  -webkit-animation: example1 15s linear infinite;
+  animation: example1 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes example1 {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes example1 {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes example1 {
+  0% {
+    -moz-transform: translateX(100%);
+    /* Firefox bug fix */
+    -webkit-transform: translateX(100%);
+    /* Firefox bug fix */
+    transform: translateX(100%);
+  }
+
+  100% {
+    -moz-transform: translateX(-100%);
+    /* Firefox bug fix */
+    -webkit-transform: translateX(-100%);
+    /* Firefox bug fix */
+    transform: translateX(-100%);
+  }
+}
+
+section.page {
+  height: 100vh;
+  background-color: #62c8f4;
+  text-align: center;
+}
+
+div.names {
+  justify-content: center;
+  padding: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+div.pop-up {
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 5vw;
+  bottom: -700px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 30px 35px 30px 35px;
+  width: 80vw;
+  max-width: 800px;
+  height: auto;
+  outline: 4px solid grey;
+  outline-offset: -10px;
+  text-align: left;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.col-1{
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.col-2{
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.col-3 {
+  width: 5%;
+}
+
+.modal-content h5 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.modal-content h6{
+  font-family: 'VT323', monospace;
+  font-size: 1.3em;
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+div.rule {
+  border-bottom: 3px solid grey;
+}
+
+div.square {
+ width: 15px;
+ height: 15px;
+ margin-right: 10px;
+ background-color: #62c8f4;
+}
+
+img.screenshot {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: -0.75%;
+  height: auto;
+}
+
+div.info {
+  margin-left: 15px;
+}
+
+#content:before,
+#content:after,
+#content>:last-child:before,
+#content>:last-child:after {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    content: ' ';
+}
+
+#content:before {
+    top: 45px;
+    left: 0px;
+    border-width: 2px 0 0 2px;
+}
+
+#content:after {
+  top: 45px;
+  right: 0px;
+  border-width: 2px 2px 0 0;
+}
+
+#content>:last-child:before {
+    bottom: -5px;
+    right: 0px;
+    border-width: 0 2px 2px 0;
+}
+
+#content>:last-child:after {
+    bottom: -5px;
+    left: -0px;
+    border-width: 0 0 2px 2px;
+}
+
+div.buttons {
+  margin-top: 15px;
+}
+
+div.buttons a.button {
+  border: 1px solid black;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  padding: 4px 10px 10px 4px;
+}
+
+a.prev{
+  justify-content: center;
+}
+
+div.buttons a.close {
+  float: right;
+}
+
+div.buttons a img{
+  height: 1.3em;
+  margin-bottom: -7px;
+}
+
+.prev img{
+  margin-right: 10px;
+}
+
+.next img{
+  transform:rotate(180deg);
+  margin-right: -5px;
+}
+
+div.brand {
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: -15px;
+  width: 104%;
+  margin-left: -2%;
+  font-size: 1em;
+  font-family: 'VT323', monospace;
+}
+
+div.brand p{
+  font-family: 'VT323', monospace;
+  font-weight: lighter;
+}

@@ -168,3 +168,8 @@ em {
 	color: white;
 	font-weight: 900;
 }
+
+.scroller {
+	height: 100px;
+	background-color: black;
+}
