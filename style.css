@@ -170,7 +170,7 @@ div.pop-up {
   width: 80vw;
   max-width: 800px;
   height: auto;
-  outline: 4px solid grey;
+  outline: 4px solid #b6b6b6;
   outline-offset: -10px;
   text-align: left;
 }
@@ -203,6 +203,7 @@ div.pop-up {
   font-family: 'Orbitron', sans-serif;
   font-weight: bold;
   font-size: 1.5em;
+  color: #5d5c5c;
 }
 
 div.profile {
@@ -219,6 +220,7 @@ img.prof {
 .modal-content h6{
   font-family: 'VT323', monospace;
   font-size: 1.3em;
+  color: #5d5c5c;
 }
 
 div.row {
@@ -230,7 +232,7 @@ div.row {
 }
 
 div.rule {
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid #5d5c5c;
 }
 
 div.square {
@@ -323,12 +325,12 @@ div.buttons a img{
 }
 
 div.brand {
-  color: grey;
+  color: #b6b6b6;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: -15px;
   width: 104%;
   margin-left: -2%;
@@ -339,4 +341,5 @@ div.brand {
 div.brand p{
   font-family: 'VT323', monospace;
   font-weight: lighter;
+  color: #b6b6b6;
 }
