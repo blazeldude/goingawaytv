@@ -153,6 +153,20 @@ div.names {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+}
+
+div.names a{
+  font-family: serif;
+  color: black;
+  font-size: 4vmin;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.personName {
+  cursor: pointer;
 }
 
 div.pop-up {
@@ -160,6 +174,7 @@ div.pop-up {
   z-index: 1; /* Sit on top */
   left: 5vw;
   bottom: -700px;
+  display: none;
 }
 
 /* Modal Content/Box */
@@ -292,6 +307,7 @@ div.info {
 
 div.buttons {
   margin-top: 15px;
+
 }
 
 div.buttons a.button {
@@ -300,6 +316,7 @@ div.buttons a.button {
   font-weight: 500;
   font-size: 1.2em;
   padding: 4px 10px 10px 4px;
+  cursor: pointer;
 }
 
 a.prev{
