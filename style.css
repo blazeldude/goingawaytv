@@ -372,7 +372,7 @@ div.about h4 {
 
 div.rule-white {
   background-color: white;
-  max-width: 1200px;
+  max-width: 700px;
   height: 4px;
   width: 60%;
   margin-left: auto;
@@ -382,7 +382,7 @@ div.rule-white {
 
 img.abt-logo {
   width: 75%;
-  max-width: 1000px;
+  max-width: 800px;
 }
 
 div.desc p{
@@ -391,5 +391,5 @@ div.desc p{
   width: 60%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1000px;
+  max-width: 700px;
 }
