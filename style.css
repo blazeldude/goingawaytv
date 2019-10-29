@@ -142,14 +142,14 @@ div.scroller {
 }
 
 section.page {
-  height: 100vh;
+  height: 130vh;
   background-color: #62c8f4;
   text-align: center;
 }
 
 div.names {
   justify-content: center;
-  padding: 150px;
+  padding: 100px;
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
@@ -161,7 +161,7 @@ div.names {
 div.names a{
   font-family: serif;
   color: black;
-  font-size: 4vmin;
+  font-size: 3vmin;
   text-align: center;
   margin-right: 5px;
 }
@@ -363,4 +363,33 @@ div.brand p{
   font-family: 'VT323', monospace;
   font-weight: lighter;
   color: #b6b6b6;
+}
+
+div.about h4 {
+  font-family: serif;
+  font-size: 2.5vmin;
+}
+
+div.rule-white {
+  background-color: white;
+  max-width: 1200px;
+  height: 4px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+img.abt-logo {
+  width: 75%;
+  max-width: 1000px;
+}
+
+div.desc p{
+  font-family: serif;
+  font-style: italic;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
 }
