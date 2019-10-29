@@ -10,22 +10,63 @@ var username = document.getElementById('username');
 var title = document.getElementById('title');
 var homepage = document.getElementById('homepage');
 var social = document.getElementById('social');
+var screenshot = document.getElementById('screenshot');
+
 var testArray = [{
-  username: 'elliotsven',
-  title: 'title',
-  homepage: 'homepage',
-  social: 'social'
+  usr: '1',
+  username: 'Aaron McCarthy',
+  title: 'msnruinedus',
+  homepage: 'https://aaron-mccarthy.com',
+  social: '@aarondamianmccarthy',
 }, {
-  username: 'nika',
-  title: 'nooka',
-  homepage: 'nurka',
-  social: 'namka'
+  usr: '2',
+  username: 'Adonis Archontides',
+  title: 'Za woka genava (I think you are hot)',
+  homepage: 'https://ragnanox.com/',
+  social: '@ragnanox/'
 }, {
-  username: 'Jeff',
-  title: 'Chucks',
-  homepage: 'Harry',
-  social: 'Egg'
-} ];
+  usr: '4',
+  username: 'Alfie Dwyer',
+  title: 'Circulate',
+  homepage: 'http://www.zezima.co.uk',
+  social: '@ze.zima'
+}, {
+  usr: '5',
+  username: 'Alif Ibrahim & CJ Park',
+  title: 'A Guided Meditation',
+  homepage: 'http://www.alifibrahim.com/',
+  social: '@ofn.w'
+}, {
+  usr: '6',
+  username: 'Amanda Rice',
+  title: 'A death in geological time',
+  homepage: 'http://www.amandarice.org/',
+  social: '@_amanda_rice'
+}, {
+  usr: '7',
+  username: 'Amy Robson',
+  title: 'Hyperloss',
+  homepage: 'https://amy-robson.co.uk/',
+  social: '@amylrobson_'
+}, {
+  usr: '10',
+  username: 'Charlie Ratcliffe',
+  title: 'Come on, Why not?',
+  homepage: 'https://www.charlieratcliffe.com/',
+  social: '@pottymouthchaz'
+}, {
+  usr: '11',
+  username: 'Chris Collins',
+  title: "Today's Modern Office",
+  homepage: 'http://chriscollins.online',
+  social: '@chris__content'
+}, {
+  usr: '12',
+  username: 'Chris Paul Daniels',
+  title: 'YOU ARE A POWER HOUSE',
+  homepage: 'http://chrispauldaniels.com',
+  social: '@chrispauldaniels'
+}];
 
 window.onload = function() {
   for (var i = 0; i < testArray.length; i++) {
@@ -35,7 +76,7 @@ window.onload = function() {
     let pnode = document.createTextNode("/");
     p.appendChild(pnode);
     a.appendChild(node);
-    a.setAttribute("id", testArray[i].username);
+    a.setAttribute("id", testArray[i].usr);
     a.setAttribute("class", "personName");
     a.addEventListener('click', function() {
       popup.style.display = "block";
@@ -57,6 +98,7 @@ next.addEventListener("click", function() {
     title.innerHTML = testArray[i].title;
     homepage.innerHTML = testArray[i].homepage;
     social.innerHTML = testArray[i].social;
+    screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
     currentInfo = i;
   } else {
     let i = currentInfo + 1;
@@ -64,6 +106,7 @@ next.addEventListener("click", function() {
     title.innerHTML = testArray[i].title;
     homepage.innerHTML = testArray[i].homepage;
     social.innerHTML = testArray[i].social;
+    screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
     currentInfo = i;
   }
 })
@@ -75,6 +118,7 @@ prev.addEventListener("click", function() {
     title.innerHTML = testArray[i].title;
     homepage.innerHTML = testArray[i].homepage;
     social.innerHTML = testArray[i].social;
+    screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
     currentInfo = i;
   } else {
     let i = currentInfo - 1;
@@ -82,17 +126,19 @@ prev.addEventListener("click", function() {
     title.innerHTML = testArray[i].title;
     homepage.innerHTML = testArray[i].homepage;
     social.innerHTML = testArray[i].social;
+    screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
     currentInfo = i;
   }
 })
 
 var setInfo = function (array, id) {
   for (var i = 0; i < testArray.length; i++) {
-    if (testArray[i].username == id) {
+    if (testArray[i].usr == id) {
       username.innerHTML = testArray[i].username;
       title.innerHTML = testArray[i].title;
       homepage.innerHTML = testArray[i].homepage;
       social.innerHTML = testArray[i].social;
+      screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
       currentInfo = i;
     }
   }
