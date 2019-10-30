@@ -15,19 +15,19 @@ var screenshot = document.getElementById('screenshot');
 var testArray = [{
   usr: '1',
   username: 'Aaron McCarthy',
-  title: 'msnruinedus',
+  title: 'msnruinedus, hearmeout, Residual Frames, You Belong in Content, Ardrossan',
   homepage: 'https://aaron-mccarthy.com',
   social: '@aarondamianmccarthy',
 }, {
   usr: '2',
   username: 'Adonis Archontides',
-  title: 'Za woka genava (I think you are hot)',
+  title: 'Za woka genava (I think you are hot), Ya gotta wob\'ere! Ya gotta wob\'ere! (Don\'t give up! Keep trying!), Sulsul! Plerg Majah Bliff? (Hello! Can I do something else please?)',
   homepage: 'https://ragnanox.com/',
   social: '@ragnanox/'
 }, {
   usr: '4',
   username: 'Alfie Dwyer',
-  title: 'Circulate',
+  title: 'Circulate, Curtains',
   homepage: 'http://www.zezima.co.uk',
   social: '@ze.zima'
 }, {
@@ -49,6 +49,12 @@ var testArray = [{
   homepage: 'https://amy-robson.co.uk/',
   social: '@amylrobson_'
 }, {
+  usr: '9',
+  username: 'Bertram von Undall',
+  title: 'P',
+  homepage: '',
+  social: '@bertramvonundall'
+}, {
   usr: '10',
   username: 'Charlie Ratcliffe',
   title: 'Come on, Why not?',
@@ -66,6 +72,12 @@ var testArray = [{
   title: 'YOU ARE A POWER HOUSE',
   homepage: 'http://chrispauldaniels.com',
   social: '@chrispauldaniels'
+}, {
+  usr: '13',
+  username: 'Christopher MacInnes',
+  title: 'Sticky Vectors',
+  homepage: 'http://christophermacinnes.com/',
+  social: '@ch.ris.to.ph.er'
 }];
 
 window.onload = function() {
