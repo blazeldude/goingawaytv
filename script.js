@@ -16,13 +16,13 @@ var testArray = [{
   usr: '1',
   username: 'Aaron McCarthy',
   title: 'msnruinedus, hearmeout, Residual Frames, You Belong in Content, Ardrossan',
-  homepage: 'https://aaron-mccarthy.com',
+  homepage: 'http://aaron-mccarthy.com',
   social: '@aarondamianmccarthy',
 }, {
   usr: '2',
   username: 'Adonis Archontides',
   title: 'Za woka genava (I think you are hot), Ya gotta wob\'ere! Ya gotta wob\'ere! (Don\'t give up! Keep trying!), Sulsul! Plerg Majah Bliff? (Hello! Can I do something else please?)',
-  homepage: 'https://ragnanox.com/',
+  homepage: 'http://ragnanox.com/',
   social: '@ragnanox/'
 }, {
   usr: '4',
@@ -46,7 +46,7 @@ var testArray = [{
   usr: '7',
   username: 'Amy Robson',
   title: 'Hyperloss',
-  homepage: 'https://amy-robson.co.uk/',
+  homepage: 'http://amy-robson.co.uk/',
   social: '@amylrobson_'
 }, {
   usr: '9',
@@ -58,7 +58,7 @@ var testArray = [{
   usr: '10',
   username: 'Charlie Ratcliffe',
   title: 'Come on, Why not?',
-  homepage: 'https://www.charlieratcliffe.com/',
+  homepage: 'http://charlieratcliffe.com/',
   social: '@pottymouthchaz'
 }, {
   usr: '11',
