@@ -202,6 +202,7 @@ div.names a{
   font-size: 4vmin;
   text-align: center;
   margin-right: 5px;
+  word-wrap: break-word;
 }
 
 div.names a.slash{
@@ -383,7 +384,7 @@ div.buttons a.button {
   font-family: 'Orbitron', sans-serif;
   font-weight: 500;
   font-size: 1.2em;
-  padding: 4px 10px 10px 4px;
+  padding: 4px 10px 4px 10px;
   cursor: pointer;
 }
 
@@ -396,8 +397,8 @@ div.buttons a.close {
 }
 
 div.buttons a img{
-  height: 1.3em;
-  margin-bottom: -7px;
+  height: 20px;
+
 }
 
 .prev img{
