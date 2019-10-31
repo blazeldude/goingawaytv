@@ -388,17 +388,12 @@ div.buttons a.button {
   cursor: pointer;
 }
 
-a.prev{
-  justify-content: center;
+div.buttons a.button em {
+  color: #62c8f4;
 }
 
 div.buttons a.close {
   float: right;
-}
-
-div.buttons a img{
-  height: 20px;
-
 }
 
 .prev img{
