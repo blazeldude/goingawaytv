@@ -164,6 +164,12 @@ var testArray = [{
   homepage: 'http://hannahmarine.co.uk/',
   social: '@hannah_marine'
 }, {
+  usr: '76',
+  username: 'Hazel Brill',
+  title: 'A Commitment',
+  homepage: 'http://www.hazelbrill.com/',
+  social: '@hazel_brill'
+}, {
   usr: '28',
   username: 'Ian Bruner',
   title: 'earth born or the great depression of Argus Panoptes (chapter one)',
