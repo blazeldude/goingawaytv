@@ -128,21 +128,6 @@ div.scroller {
   position: relative;
 }
 
-@media only handheld {
-  div.intro {
-    display: none;
-  }
-  div.scroller {
-    display: none;
-  }
-  section.page {
-    display: none;
-  }
-  body {
-    overflow-y: hidden;
-  }
-}
-
 .scroller h3 {
   font-size: 3em;
   font-family: 'VT323', monospace;
