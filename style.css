@@ -35,6 +35,7 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.2em;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 ol, ul {
@@ -68,7 +69,7 @@ h1 {
 h7 {
   font-family: 'Jura', sans-serif;
   font-weight: bold;
-  color: #5d5c5c;
+  color: #b6b6b6;
 }
 
 p {
