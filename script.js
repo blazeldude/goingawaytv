@@ -436,6 +436,7 @@ var testArray = [{
 }];
 
 window.onload = function() {
+  is_touch_device();
   for (var i = 0; i < testArray.length; i++) {
     let a = document.createElement("a");
     let p = document.createElement("a");
@@ -521,5 +522,16 @@ var setInfo = function (array, id) {
       screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
       currentInfo = i;
     }
+  }
+}
+
+function is_touch_device() {
+  try {
+    document.createEvent("TouchEvent");
+    intro.style.display = "none";
+    scroller.style.display = "none";
+    page.style.display = "none";
+    body.style.overflowY = "hidden";
+  } catch (e) {
   }
 }

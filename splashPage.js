@@ -13,17 +13,3 @@ enter.addEventListener("click", function(){
   document.body.scrollTop = 0; // For Safari
  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 })
-
-window.onload = is_touch_device();
-
-
-function is_touch_device() {
-  try {
-    document.createEvent("TouchEvent");
-    intro.style.display = "none";
-    scroller.style.display = "none";
-    page.style.display = "none";
-    body.style.overflowY = "hidden";
-  } catch (e) {
-  }
-}

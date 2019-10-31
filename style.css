@@ -412,6 +412,12 @@ div.buttons a.close {
   margin-right: -5px;
 }
 
+div.hello h4{
+  padding-top: 50px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25em;
+}
+
 div.brand {
   color: #b6b6b6;
   display: flex;
