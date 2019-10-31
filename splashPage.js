@@ -1,6 +1,10 @@
 var enter = document.querySelector('a.enter');
 var intro = document.querySelector('div.intro');
+var scroller = document.querySelector('div.scroller');
+var page = document.querySelector('section.page');
 var body = document.querySelector('body');
+
+
 
 
 enter.addEventListener("click", function(){
@@ -8,13 +12,18 @@ enter.addEventListener("click", function(){
   body.style.overflowY = "auto";
   document.body.scrollTop = 0; // For Safari
  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
- is_touch_device();
 })
+
+window.onload = is_touch_device();
+
 
 function is_touch_device() {
   try {
     document.createEvent("TouchEvent");
-    alert(true);
+    intro.style.display = "none";
+    scroller.style.display = "none";
+    page.style.display = "none";
+    body.style.overflowY = "hidden";
   } catch (e) {
     alert(false);
   }
