@@ -25,6 +25,5 @@ function is_touch_device() {
     page.style.display = "none";
     body.style.overflowY = "hidden";
   } catch (e) {
-    alert(false);
   }
 }
