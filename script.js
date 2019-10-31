@@ -435,6 +435,7 @@ window.onload = function() {
     let node = document.createTextNode(testArray[i].username);
     let pnode = document.createTextNode("/");
     p.appendChild(pnode);
+    p.setAttribute("class", "slash");
     a.appendChild(node);
     a.setAttribute("id", testArray[i].usr);
     a.setAttribute("class", "personName");
@@ -470,6 +471,17 @@ next.addEventListener("click", function() {
     currentInfo = i;
   }
 })
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+            alert('left');
+            break;
+        case 39:
+            alert('fuck u marc');
+            break;
+    }
+};
 
 prev.addEventListener("click", function() {
   if (currentInfo == 0) {
