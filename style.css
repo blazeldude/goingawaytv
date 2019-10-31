@@ -129,10 +129,20 @@ div.scroller {
 }
 
 @media only screen and (max-width: 600px) {
-  section.video {
-    height: 90vh;
+  div.intro {
+    display: none;
+  }
+  div.scroller {
+    display: none;
+  }
+  section.page {
+    display: none;
+  }
+  body {
+    overflow-y: hidden;
   }
 }
+
 .scroller h3 {
   font-size: 3em;
   font-family: 'VT323', monospace;
