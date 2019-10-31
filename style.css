@@ -128,6 +128,11 @@ div.scroller {
   position: relative;
 }
 
+@media only screen and (max-width: 600px) {
+  section.video {
+    height: 90vh;
+  }
+}
 .scroller h3 {
   font-size: 3em;
   font-family: 'VT323', monospace;
