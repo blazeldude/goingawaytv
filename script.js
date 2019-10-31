@@ -458,6 +458,7 @@ next.addEventListener("click", function() {
     username.innerHTML = testArray[i].username;
     title.innerHTML = testArray[i].title;
     homepage.innerHTML = testArray[i].homepage;
+    homepage.setAttribute('href', testArray[i].homepage);
     social.innerHTML = testArray[i].social;
     screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
     currentInfo = i;
@@ -466,22 +467,12 @@ next.addEventListener("click", function() {
     username.innerHTML = testArray[i].username;
     title.innerHTML = testArray[i].title;
     homepage.innerHTML = testArray[i].homepage;
+    homepage.setAttribute('href', testArray[i].homepage);
     social.innerHTML = testArray[i].social;
     screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
     currentInfo = i;
   }
 })
-
-document.onkeydown = function(e) {
-    switch (e.keyCode) {
-        case 37:
-            alert('left');
-            break;
-        case 39:
-            alert('fuck u marc');
-            break;
-    }
-};
 
 prev.addEventListener("click", function() {
   if (currentInfo == 0) {
@@ -489,6 +480,7 @@ prev.addEventListener("click", function() {
     username.innerHTML = testArray[i].username;
     title.innerHTML = testArray[i].title;
     homepage.innerHTML = testArray[i].homepage;
+    homepage.setAttribute('href', testArray[i].homepage);
     social.innerHTML = testArray[i].social;
     screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
     currentInfo = i;
@@ -497,6 +489,7 @@ prev.addEventListener("click", function() {
     username.innerHTML = testArray[i].username;
     title.innerHTML = testArray[i].title;
     homepage.innerHTML = testArray[i].homepage;
+    homepage.setAttribute('href', testArray[i].homepage);
     social.innerHTML = testArray[i].social;
     screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
     currentInfo = i;
@@ -509,6 +502,7 @@ var setInfo = function (array, id) {
       username.innerHTML = testArray[i].username;
       title.innerHTML = testArray[i].title;
       homepage.innerHTML = testArray[i].homepage;
+      homepage.setAttribute('href', testArray[i].homepage);
       social.innerHTML = testArray[i].social;
       screenshot.src = './img/screenshots/' + testArray[i].usr + '.jpg';
       currentInfo = i;

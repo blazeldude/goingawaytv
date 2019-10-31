@@ -181,7 +181,7 @@ div.pop-up {
   position: fixed; /* Stay in place */
   z-index: 1000; /* Sit on top */
   left: 50%;
-  margin-left: -400px;
+  margin-left: -450px;
   top: 0;
   display: none;
 }
@@ -422,8 +422,13 @@ div.footer {
   flex-direction: row;
   margin-left: auto;
   margin-right: auto;
-  justify-content: space-between;
-  width: 60vw;
+  justify-content: center;
+  max-width: 60vw;
   margin-top: 50px;
   padding-bottom: 40px;
+  align-items: center;
+}
+
+div.footer img{
+  padding-right: 40px;
 }
