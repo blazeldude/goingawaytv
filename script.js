@@ -173,14 +173,20 @@ var testArray = [{
   usr: '29',
   username: 'Ian Bruner & Don Elektro',
   title: 'TESTGELÄNDE',
-  homepage: 'http://donelektro.tumblr.com/, http://instagram.com/ideath_/',
+  homepage: 'http://donelektro.tumblr.com/',
   social: '@don.electro @ideath_'
 }, {
   usr: '30',
   username: 'Isabella Benshimol & Mati Jhurry ',
   title: 'Exotic Embassy',
-  homepage: 'http://isabellabenshimol.com/, http://matijhurry.com/',
+  homepage: 'http://isabellabenshimol.com/',
   social: '@ibenshimol @matijhurry'
+}, {
+  usr: '45',
+  username: 'Mati Jhurry',
+  title: 'WELCOME',
+  homepage: 'http://matijhurry.com/',
+  social: '@matijhurry'
 }, {
   usr: '31',
   username: 'Jakob Kudsk Steensen',
@@ -253,12 +259,6 @@ var testArray = [{
   title: 'feels',
   homepage: 'http://www.marionbalac.com/',
   social: '@marionbalac'
-}, {
-  usr: '45',
-  username: 'Mati Jhurry',
-  title: 'WELCOME',
-  homepage: 'http://matijhurry.com/',
-  social: '@matijhurry'
 }, {
   usr: '46',
   username: 'Maurício Joseb',
