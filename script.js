@@ -3,6 +3,7 @@ var closebtn = popup.querySelector(".close");
 var next = popup.querySelector(".next");
 var prev = popup.querySelector(".prev");
 var names = document.querySelector("div.names");
+var overlay = document.querySelector("a.overlay");
 
 var currentInfo;
 
@@ -441,6 +442,7 @@ window.onload = function() {
     a.setAttribute("class", "personName");
     a.addEventListener('click', function() {
       popup.style.display = "block";
+      overlay.style.display = "block";
       setInfo(testArray, this.id);
     });
     names.appendChild(a);
@@ -450,6 +452,12 @@ window.onload = function() {
 
 closebtn.addEventListener("click", function() {
   popup.style.display = "none";
+  overlay.style.display = "none";
+})
+
+overlay.addEventListener("click", function() {
+  popup.style.display = "none";
+  overlay.style.display = "none";
 })
 
 next.addEventListener("click", function() {
