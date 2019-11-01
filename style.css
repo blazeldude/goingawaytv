@@ -188,7 +188,7 @@ div.scroller {
 }
 
 section.page {
-  background-color: #62c8f4;
+  background: linear-gradient(0deg, rgba(163,255,171,1) 0%, rgba(78,187,233,1) 100%);
   text-align: center;
 }
 
