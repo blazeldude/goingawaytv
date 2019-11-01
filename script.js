@@ -101,7 +101,7 @@ var testArray = [{
   usr: '17',
   username: 'Dave Greber',
   title: 'YOUCANTRIPTHESKINOFFOFASNAKE, YouCantRiptheSkinOffofaSnake 2 _ The Return',
-  homepage: 'https://www.thesculpted.com',
+  homepage: 'http://www.thesculpted.com',
   social: '@davaygrebere'
 }, {
   usr: '18',
@@ -125,7 +125,7 @@ var testArray = [{
   usr: '21',
   username: 'Edward Martin',
   title: 'XENOMORPHE (HOX:CODE)',
-  homepage: 'https://edwardmartinartist.com',
+  homepage: 'http://edwardmartinartist.com',
   social: '@edwardmartin_'
 }, {
   usr: '22',
@@ -137,19 +137,19 @@ var testArray = [{
   usr: '23',
   username: 'Fengyi Zhu',
   title: 'Airplane Mode',
-  homepage: 'https://fengyizhu.studio',
+  homepage: 'http://fengyizhu.studio',
   social: '@franciscolacarnum'
 }, {
   usr: '24',
   username: 'Fergus Carmichael',
   title: 'Matter of Britain __ 4_50 am BST Glastonbury Tor',
-  homepage: 'https://ferguscarmichael.co.uk/',
+  homepage: 'http://ferguscarmichael.co.uk/',
   social: '@ferguscarmichael'
 }, {
   usr: '25',
   username: 'Gretchen Andrew',
   title: 'Turner prize winners',
-  homepage: 'https://gretchenandrew.com',
+  homepage: 'http://gretchenandrew.com',
   social: '@gretchenandrew'
 }, {
   usr: '26',
@@ -203,7 +203,7 @@ var testArray = [{
   usr: '32',
   username: 'James McColl',
   title: 'Monolithic Dome Cap Unit',
-  homepage: 'https://jamesmccollartist.com/',
+  homepage: 'http://jamesmccollartist.com/',
   social: '@jamesmccoll999'
 }, {
   usr: '33',
@@ -221,7 +221,7 @@ var testArray = [{
   usr: '36',
   username: 'Kiah Reading',
   title: 'The Greater Sunrise, Pure Reason and Bass',
-  homepage: 'https://kiahreading.com/',
+  homepage: 'http://kiahreading.com/',
   social: '@kombuchie'
 }, {
   usr: '38',
@@ -245,7 +245,7 @@ var testArray = [{
   usr: '41',
   username: 'Louis Judkins',
   title: 'Concrete Dildo Ep.5, Feed The Geese',
-  homepage: 'https://vimeo.com/louisjudkins',
+  homepage: 'http://vimeo.com/louisjudkins',
   social: '@pooey_louis'
 }, {
   usr: '42',
@@ -269,7 +269,7 @@ var testArray = [{
   usr: '46',
   username: 'Maurício Joseb',
   title: 'OUTISBE',
-  homepage: 'https://www.mauriciojoseb.com/autoral',
+  homepage: 'http://www.mauriciojoseb.com/autoral',
   social: '@maujoseb'
 }, {
   usr: '47',
@@ -281,19 +281,19 @@ var testArray = [{
   usr: '48',
   username: 'Molly Erin McCarthy',
   title: 'Western Approach To Paradise',
-  homepage: 'https://www.mollyerin.co.uk/',
+  homepage: 'http://www.mollyerin.co.uk/',
   social: '@molly.erh'
 }, {
   usr: '49',
   username: 'Naomi Fitzsimmons',
   title: 'Thirsty (Chapters 1-3)',
-  homepage: 'https://www.naomifitzsimmons.com/',
+  homepage: 'http://www.naomifitzsimmons.com/',
   social: '@naomi_hf_89'
 }, {
   usr: '50',
   username: 'Natalia Skobeeva',
   title: 'Biographies of Objects',
-  homepage: 'https://skobeeva.org',
+  homepage: 'http://skobeeva.org',
   social: ' '
 }, {
   usr: '51',
@@ -317,7 +317,7 @@ var testArray = [{
   usr: '54',
   username: 'Qigemu (April Lin and Jasmine Lin)',
   title: 'Reality Fragment 160921',
-  homepage: 'https://vimeo.com/qigemu',
+  homepage: 'http://vimeo.com/qigemu',
   social: '@allthatjasss @babe__lin'
 }, {
   usr: '55',
@@ -329,7 +329,7 @@ var testArray = [{
   usr: '56',
   username: 'Ruaidhri Ryan',
   title: 'Accelerating Towards A Red Light',
-  homepage: 'https://ruaidhriryan.com',
+  homepage: 'http://ruaidhriryan.com',
   social: '@ruaidhri_ryan'
 }, {
   usr: '57',
@@ -341,7 +341,7 @@ var testArray = [{
   usr: '58',
   username: 'Samuel Fouracre',
   title: 'D.^^.$.®. (Dance.Music.Sex.Romance), Oh Rose, thou art sick_Stan_Smith_William_Blake_Edition',
-  homepage: 'https://samuelfouracre.com',
+  homepage: 'http://samuelfouracre.com',
   social: '@samuelfouracre'
 }, {
   usr: '59',
@@ -353,25 +353,25 @@ var testArray = [{
   usr: '60',
   username: 'Shinji Toya',
   title: 'Pixels without Vagueness',
-  homepage: 'https://shinjitoya.com/',
+  homepage: 'http://shinjitoya.com/',
   social: '@shinjitoya'
 }, {
   usr: '61',
   username: 'Sid Smith',
   title: 'Extension (For Len Blavatnik), That Cat Trip Ride: No Galore (Eulogy for Baby)',
-  homepage: 'https://sidsmith.info',
+  homepage: 'http://sidsmith.info',
   social: '@sidsmif'
 }, {
   usr: '63',
   username: 'Smriti Mehra, Leslie Johnson, Chinar Shah',
   title: 'More Joy, More Love, More Mortgage',
-  homepage: 'https://www.smritimehra.com',
+  homepage: 'http://www.smritimehra.com',
   social: '@smirtrimehra'
 }, {
   usr: '64',
   username: 'Stelios Ilchouk',
   title: 'it\'s dangerous to go alone. take this!',
-  homepage: 'www.steliosilchouk.com',
+  homepage: 'http://steliosilchouk.com',
   social: '@steliosilchouk'
 }, {
   usr: '65',
@@ -383,25 +383,25 @@ var testArray = [{
   usr: '66',
   username: 'Tabitha Beresford-Webb',
   title: 'Charac and Other and a Reflection, Reflection, Cat and Information',
-  homepage: 'tabithabw.co.uk',
+  homepage: 'http://tabithabw.co.uk',
   social: '@tabsclouds'
 }, {
   usr: '67',
   username: 'Tea Strazicic',
   title: 'Martian Long Year System, Dance With the Devil',
-  homepage: 'https://teastrazicic.com/',
+  homepage: 'http://teastrazicic.com/',
   social: '@flufflord'
 }, {
   usr: '68',
   username: 'Ted Le Swer',
   title: 'Space Mongers',
-  homepage: 'www.tedleswer.org',
+  homepage: 'http://tedleswer.org',
   social: '@tedleswer'
 }, {
   usr: '69',
   username: 'Theo Tagholm',
   title: 'Edifice',
-  homepage: 'http://www.theotagholm.com/',
+  homepage: 'http://theotagholm.com/',
   social: '@mustard_yeah'
 }, {
   usr: '71',
@@ -413,13 +413,13 @@ var testArray = [{
   usr: '72',
   username: 'Wilf Speller',
   title: 'Benjamin\'s Orchid',
-  homepage: 'www.wilfspeller.co.uk',
+  homepage: 'http://wilfspeller.co.uk',
   social: '@wilfspeller'
 }, {
   usr: '73',
   username: 'Will Kendrick',
   title: 'I\'ve Never Been There But I Know What it Looks Like',
-  homepage: 'www.willkendrick.co.uk',
+  homepage: 'http://willkendrick.co.uk',
   social: '@willkendrick1'
 }, {
   usr: '74',
@@ -431,7 +431,7 @@ var testArray = [{
   usr: '75',
   username: 'Yoojin Lee',
   title: 'sleeping (in \'a city that never sleeps\')',
-  homepage: 'https://www.nijooy.com/',
+  homepage: 'http://www.nijooy.com/',
   social: '@nijooy'
 }];
 
