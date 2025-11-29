@@ -6,8 +6,7 @@ html, body {
   background: #0c1927;
   overflow-x: hidden;
   overflow-y: hidden;
-
-  
+  height: 100%;
 }
 
 a {
@@ -47,10 +46,8 @@ a:hover {
 
 .video-wrapper {
   position: relative;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   aspect-ratio: 16 / 9;
-  margin: auto;
   overflow: hidden;
 }
 
@@ -66,9 +63,13 @@ a:hover {
 .splash-container {
   position: relative;
   z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  min-width: 500px;
   margin: auto;
-  padding: 60px;
+  padding: 3vw;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -81,10 +82,9 @@ a:hover {
   font-size: 6vw;
   color: #ffffff;
   text-shadow: #000000 0px 0 10px;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
-
-  
   padding: 0.2vw 2vw;
   border-radius: 15px;
   backdrop-filter: blur(5px);
@@ -115,6 +115,7 @@ a:hover {
   width: 5vw;
   object-fit: cover;
   display: block;
+  min-width: 50px;
 }
 
 .info-button:hover {
@@ -295,13 +296,15 @@ dialog::backdrop {
     background-position: top center;
   } */
 
-  .splash-container {
+  /* .splash-container {
     position: relative;
+    flex-direction: column;
+    align-items: center;
     max-width: 95%;
     margin: 0 auto;
     padding: 40px 15px;
     z-index: 2;
-  }
+  } */
 
   .splash-logo {
     width: 100%;
