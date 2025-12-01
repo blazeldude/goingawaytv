@@ -14,10 +14,9 @@ a {
   text-decoration: none;
   display: inline-block;
   padding: 1em 0 0.2em 0;
-  font-size: 1.5vw;
+  font-size: calc(12px + 1.5vw);
+  min-width: 300px;
   text-shadow: #000000 0px 0 10px;
-
-
 }
 
 a:hover {
@@ -65,7 +64,6 @@ a:hover {
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  min-width: 500px;
   margin: auto;
   padding: 3vw;
   display: flex;
@@ -79,7 +77,7 @@ a:hover {
 .countdown-container {
   font-family: 'Oxanium';
   font-weight: 400;
-  font-size: 6vw;
+  font-size: calc(20px + 6vw);
   color: #ffffff;
   text-shadow: #000000 0px 0 10px;
   margin-top: 10px;
@@ -93,11 +91,12 @@ a:hover {
 
 .time-unit {
   font-family: 'Oxanium';
-  font-size: 3vw;
+  font-size: calc(10px + 3vw);
   color: #ca0000;
   font-weight: 400;
   text-shadow: #000000 0px 0 10px;
 }
+
 
 .info-button {
   position: fixed;
@@ -238,8 +237,6 @@ dialog::backdrop {
   z-index: 10;
 }
 
-
-
 .list {
   list-style: none;
   padding-left: 1.2em;
@@ -279,54 +276,4 @@ dialog::backdrop {
 .apply-button:hover {
   background-color: #9ee4ff;
   transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  html, body {
-    font-size: 14px;
-  }
-
-  /* .background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    background-size: 100% auto;
-    background-position: top center;
-  } */
-
-  /* .splash-container {
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    max-width: 95%;
-    margin: 0 auto;
-    padding: 40px 15px;
-    z-index: 2;
-  } */
-
-  .splash-logo {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .splash-image {
-    width: 65%;
-    margin: 20px 0;
-  }
-
-  .splash-text h1 {
-    font-size: 2rem;
-  }
-
-  .splash-text p,
-  .list li {
-    font-size: 1rem;
-  }
-
-  .apply-button {
-    font-size: 1.5rem;
-    padding: 0.6em 1.2em;
-  }
 }
