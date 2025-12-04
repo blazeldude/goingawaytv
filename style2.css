@@ -38,6 +38,7 @@ a:hover {
 .scatter-img {
   position: absolute;
   width: 15%;
+  min-width: 150px;
   height: auto;
   pointer-events: none;
   z-index: 1;
@@ -128,9 +129,10 @@ a:hover {
 dialog {
   background: transparent;
   border: none;
+  position: fixed;
   padding: 0;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
   overflow: visible;
   
 }
@@ -142,7 +144,7 @@ dialog {
   padding: 3vw;
   border-radius: 10px;
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 1rem;
+  font-size: calc(0.6rem + 0.3vw);  
   text-align: left;
   box-shadow: #00000098 4px 4px 10px;
 }
@@ -168,15 +170,40 @@ dialog {
 	margin-bottom: -20px;
 }
 
-dialog p {
-  margin: 0.5em 0;
+.dialog-content p {
+  margin: 1.5% 0;
 }
 
-dialog h1 {
-  font-size: 1.5rem;
+
+.dialog-content h1 {
+  font-size: 3.5vh;
   font-weight: bold;
   color: #000000;
 }
+
+.dialog-content h2 {
+  font-size: 2.5vh;
+  font-weight: bold;
+  color: #000000;
+}
+
+.dialog-content a {
+  all: unset;
+  color: #000;
+  font-weight: bold;
+  font-size: calc(0.6rem + 0.3vw);
+  cursor: pointer;
+  text-decoration-color: #000;
+}
+
+.dialog-content a:hover {
+  color: #ca0000;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ca0000;
+}
+
+
 
 dialog::backdrop {
   backdrop-filter: blur(2px);
@@ -214,8 +241,8 @@ dialog::backdrop {
   text-align: justify;
 }
 
-.inline-white {
-  color: #ffffff;
+.inline-red {
+  color: #ca0000;
 }
 
 .inline-bold {
@@ -224,6 +251,12 @@ dialog::backdrop {
 
 .inline-italic {
   font-style: italic;
+}
+
+.wavy-underline {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ca0000;
 }
 
 .center-align {
@@ -276,4 +309,50 @@ dialog::backdrop {
 .apply-button:hover {
   background-color: #9ee4ff;
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  dialog {
+    position: fixed;
+    margin-left: 6vw;
+    margin-right: 5vw;
+  }
+
+  .dialog-content img {
+  width: 5vh;
+  object-fit: contain;
+}
+
+  .dialog-content { 
+    font-size: calc(0.6rem + 0.3vw);
+    padding: 5vw;
+  }
+
+  .dialog-content h1 {
+  font-size: 2.5vh;
+  font-weight: bold;
+  color: #000000;
+}
+
+.dialog-content h2 {
+  font-size: 2vh;
+  font-weight: bold;
+  color: #000000;
+}
+
+.dialog-content a {
+  all: unset;
+  color: #000;
+  font-weight: bold;
+  font-size: calc(0.6rem + 0.3vw);
+  cursor: pointer;
+  text-decoration-color: #000;
+}
+
+.dialog-content a:hover {
+  color: #ca0000;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ca0000;
+}
 }
