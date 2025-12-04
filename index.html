@@ -3,72 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Going Away.tv - OPEN CALL</title>
+  <title>Going Away.tv - Locked In</title>
   
-  <!-- Import Nunito Sans and New Rocker fonts -->
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <link rel="manifest" href="/img/site.webmanifest" />
   <link
-    href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Nunito+Sans:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Oxanium:wght@200..800&display=swap"
     rel="stylesheet"
   />
   
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <div class="background-container"></div>
 
-  <div class="splash-container">
-    <img src="img/GATVnewLOGO.png" alt="Your Logo" class="splash-logo" />
-    <img src="img/GATVopencallbubbleWEB.png" alt="Description" class="splash-image" />
-    
-    <div class="splash-text">
-      <h1>This time it's personal</h1>
+<div class="splash-container">
+    <div class="video-wrapper">
+<iframe 
+    src="https://player.vimeo.com/video/1140060340?autoplay=1&controls=1&loop=1&title=0&byline=0&portrait=0" 
+    frameborder="0" 
+    style="width:100%; height:100%;" 
+    allow="autoplay; encrypted-media"
+  ></iframe>
+</div>
 
-      <p>
-        You may remember <a href="https://youtu.be/X9BEO5Ft3oY?si=oHMdIrueMi2o3xiU" target="_blank" rel="noopener noreferrer">Going Away.tv</a>, you may not.
+<div class="countdown-container" id="timer">
+</div>
+</div>
 
-        It came out of us acknowledging that within our contemporary media landscape – there is too much choice.
+<div class="bottom-left">
+  <a href="https://www.instagram.com/goingaway.tv/" target="_blank" rel="noopener noreferrer">@goingaway.tv</a>
+</div>
 
-        Goingaway.tv was an antidote to this, where you could log on and tune out – we chose the content for you to enjoy. Now we’re asking you to do the same for us.
 
-        Previously a 24/7 stream of Artists’ moving image, our renewed concept will take us fully into the live space. We will watch all of your submissions, no exceptions. The watching process will itself be streamed live, however long it takes.
-         
-        For our sanity, all works submitted must be 10 mins or under. Moving image, short films, video art - we want to see it all.
-      </p>
+<dialog closedby="any">
+    <div class="dialog-content">
+<h1><img src="img/Information.png">Going Away.tv: Locked In <span class="inline-red">[LIVE 17/01/2026]</span></h1> 
+<p>Don’t change the channel, adjust your set, or scroll past. Fuck it... we’ll do it live.</p>
 
-      <p><span class="inline-bold inline-white">Deadline for submissions: 11/08/2025</span></p>
+<p>The Director Generals have called upon artists far and wide to send in their moving-image works, and they did. All 117 of them.</p>
+<p>Now they’re going to watch every single one, <span class="inline-bold inline-red">LIVE</span>, however long it takes.</p>
+<p>You are invited to watch along as this highly scientific experiment explores the irreversible effects of being locked in a room with an obscene amount of video art.</p>
+<p>This marathon will be hosted by Artist 
+  
+  <a href="http://www.marcblazel.com/" target="_blank" rel="noopener noreferrer">Marc Blazel</a> 
+    and Writer/Curator 
+  <a href="https://alexanderharding.co.uk/" target="_blank" rel="noopener noreferrer">Alexander Harding</a>. 
+  
+  Expect a blend of critique, chat, live segments, sleep deprivation and whatever else happens when you’re truly locked in.</p>
+<p><b>Going Away.tv: Locked In</b> will be live all day (and probably night) on the <span class="inline-bold wavy-underline">17th January 2026</span>, right here at Going Away.tv.</p>
+<p>Stay tuned...</p>
 
-      <p>Love,<br>The Director Generals<br>XOXO</p>
+<h2>About Going Away.tv</h2>
+<p>Going Away.tv is an online platform that previously hosted live streamed artists’ moving image as a 24/7 stream. Conceived as an embassy for the 2019 edition of the Wrong Biennale, It was later reconfigured as a series of live events at Arebyte Gallery, London. This is its evolution.
+</p>
+<p>Director generals: <a href="http://www.marcblazel.com/" target="_blank" rel="noopener noreferrer">Marc Blazel</a> 
+    and 
+  <a href="https://alexanderharding.co.uk/" target="_blank" rel="noopener noreferrer">Alexander Harding</a>.</p>
 
-      <h2>Submission guidelines:</h2>
+<button class="close">x</button>
+</div>
+</dialog>
 
-      <p>Please send a link to your video using Youtube, Vimeo or a public Google Drive file.</p>
 
-      <p>
-        By submitting your video you consent to have it watched during the Going Away.tv: Locked in live stream and featured on our website for the duration of the project.
-      </p>
+<button class="info-button" id="any-btn">
+  <img src="img/Information.png">
+</button>
+ 
 
-      <p>All submitted videos will be featured.</p>
 
-      <h2>Restrictions:</h2>
+</div>
 
-      <ul class="list">
-        <li>No Copyright sound</li>
-        <li>No nudity</li>
-        <li>No graphic violence</li>
-        <li>10 mins or under</li>
-      </ul>
+<script src="scatter.js"></script>
+<script src="timer.js"></script>
+<script src="infobutton.js"></script>
 
-      <h1>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_Dfxd6ovlc9T3Y8ruwdwsaDjV-Vno8ac2XvdQG-zbiyiDNA/viewform?usp=header" 
-           class="apply-button" target="_blank" rel="noopener noreferrer">
-          APPLY HERE
-        </a>
-      </h1>
-
-      <div class="center-align">
-        <a href="https://www.instagram.com/goingaway.tv/" target="_blank" rel="noopener noreferrer">@goingaway.tv</a>
-      </div>
-    </div>
-  </div>
 </body>
 </html>

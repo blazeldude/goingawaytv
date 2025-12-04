@@ -5,6 +5,8 @@ html, body {
   font-size: 17px;
   background: #0c1927;
   overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
 }
 
 a {
@@ -12,51 +14,214 @@ a {
   text-decoration: none;
   display: inline-block;
   padding: 1em 0 0.2em 0;
+  font-size: calc(12px + 1.5vw);
+  min-width: 300px;
+  text-shadow: #000000 0px 0 10px;
 }
 
 a:hover {
-  color: #dddddd;
+  color: #1eff00;
   text-decoration: underline;
 }
 
 .background-container {
   width: 100%;
-  height: 1440px;
-  background-image: url('img/BGImage.png');
+  height: 100%;
+  background-image: url('img/SITEBG1.jpg');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  position: relative;
+  position: fixed;
   z-index: 0;
+}
+
+.scatter-img {
+  position: absolute;
+  width: 15%;
+  min-width: 150px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .splash-container {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
-  margin: -1440px auto 0 auto;
-  padding: 10px 20px 60px 20px;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  padding: 3vw;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
   box-sizing: border-box;
 }
 
-.splash-logo {
-  max-width: 1100px;
-  width: 100%;
-  height: auto;
+.countdown-container {
+  font-family: 'Oxanium';
+  font-weight: 400;
+  font-size: calc(20px + 6vw);
+  color: #ffffff;
+  text-shadow: #000000 0px 0 10px;
+  margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
+  padding: 0.2vw 2vw;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+
 }
 
-.splash-image {
-  max-width: 500px;
-  width: 90%;
-  height: auto;
-  margin: 20px 0;
-  border-radius: 8px;
+.time-unit {
+  font-family: 'Oxanium';
+  font-size: calc(10px + 3vw);
+  color: #ca0000;
+  font-weight: 400;
+  text-shadow: #000000 0px 0 10px;
 }
+
+
+.info-button {
+  position: fixed;
+  bottom: 1.2vw;
+  right: 1.2vw;
+  z-index: 10;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.info-button img {
+  width: 5vw;
+  object-fit: cover;
+  display: block;
+  min-width: 50px;
+}
+
+.info-button:hover {
+  transform: scale(1.1);
+}
+
+.info-button:active {
+  transform: scale(0.95);
+}
+
+dialog {
+  background: transparent;
+  border: none;
+  position: fixed;
+  padding: 0;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  overflow: visible;
+  
+}
+
+.dialog-content {
+  position: relative;
+  background: #f7f7da;
+  color: #020202;
+  padding: 3vw;
+  border-radius: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: calc(0.6rem + 0.3vw);  
+  text-align: left;
+  box-shadow: #00000098 4px 4px 10px;
+}
+
+.dialog-content img {
+  width: 3vw;
+  margin-right: 1vw;
+  object-fit: contain;
+}
+
+.dialog-content::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 2%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #f7f7da;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+.dialog-content p {
+  margin: 1.5% 0;
+}
+
+
+.dialog-content h1 {
+  font-size: 3.5vh;
+  font-weight: bold;
+  color: #000000;
+}
+
+.dialog-content h2 {
+  font-size: 2.5vh;
+  font-weight: bold;
+  color: #000000;
+}
+
+.dialog-content a {
+  all: unset;
+  color: #000;
+  font-weight: bold;
+  font-size: calc(0.6rem + 0.3vw);
+  cursor: pointer;
+  text-decoration-color: #000;
+}
+
+.dialog-content a:hover {
+  color: #ca0000;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ca0000;
+}
+
+
+
+dialog::backdrop {
+  backdrop-filter: blur(2px);
+  background-color: rgba(151, 217, 255, 0.274);
+}
+
+.close {
+  position: absolute;
+  top: 0; 
+  right: .8vw;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #a89f8e;
+  cursor: pointer;
+  padding: 0;
+}
+
 
 .splash-text {
   max-width: 900px;
@@ -65,23 +230,8 @@ a:hover {
   box-sizing: border-box;
 }
 
-.splash-text h1 {
-  font-family: 'New Rocker', cursive;
-  font-weight: 400;
-  font-size: 4rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
 
-.splash-text h2 {
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.splash-text p {
+.countdown-text p {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 400;
   font-size: 1.1rem;
@@ -91,8 +241,8 @@ a:hover {
   text-align: justify;
 }
 
-.inline-white {
-  color: #ffffff;
+.inline-red {
+  color: #ca0000;
 }
 
 .inline-bold {
@@ -103,8 +253,26 @@ a:hover {
   font-style: italic;
 }
 
+.wavy-underline {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ca0000;
+}
+
 .center-align {
   text-align: center;
+}
+
+.bottom-left {
+  position: fixed;
+  bottom: 1.2vw;
+  left: 1.2vw;
+  z-index: 10;
+}
+
+.bottom-left a {
+  display: inline;       /* only text is clickable */
+  padding: 0;            /* remove extra clickable padding */
 }
 
 .list {
@@ -149,49 +317,54 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  html, body {
-    font-size: 14px;
+  dialog {
+    position: fixed;
+    margin-left: 6vw;
+    margin-right: 5vw;
   }
 
-  .background-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    background-size: 100% auto;
-    background-position: top center;
+  .dialog-content img {
+  width: 5vh;
+  object-fit: contain;
+}
+
+  .dialog-content { 
+    font-size: calc(0.6rem + 0.3vw);
+    padding: 5vw;
   }
 
-  .splash-container {
-    position: relative;
-    max-width: 95%;
-    margin: 0 auto;
-    padding: 40px 15px;
-    z-index: 2;
-  }
+  .dialog-content::after {
+	right: 4%;
+}
 
-  .splash-logo {
-    width: 100%;
-    margin-bottom: 10px;
-  }
+  .dialog-content h1 {
+  font-size: 2.5vh;
+  font-weight: bold;
+  color: #000000;
+}
 
-  .splash-image {
-    width: 65%;
-    margin: 20px 0;
-  }
+.dialog-content h2 {
+  font-size: 2vh;
+  font-weight: bold;
+  color: #000000;
+}
 
-  .splash-text h1 {
-    font-size: 2rem;
-  }
+.dialog-content a {
+  all: unset;
+  color: #000;
+  font-weight: bold;
+  font-size: calc(0.6rem + 0.3vw);
+  cursor: pointer;
+  text-decoration-color: #000;
+}
 
-  .splash-text p,
-  .list li {
-    font-size: 1rem;
-  }
+.dialog-content a:hover {
+  color: #ca0000;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ca0000;
 
-  .apply-button {
-    font-size: 1.5rem;
-    padding: 0.6em 1.2em;
-  }
+
+
+}
 }

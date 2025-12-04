@@ -1,0 +1,197 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 17px;
+  background: #0c1927;
+  overflow-x: hidden;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1em 0 0.2em 0;
+}
+
+a:hover {
+  color: #dddddd;
+  text-decoration: underline;
+}
+
+.background-container {
+  width: 100%;
+  height: 1440px;
+  background-image: url('img/BGImage.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+
+.splash-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: -1440px auto 0 auto;
+  padding: 10px 20px 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.splash-logo {
+  max-width: 1100px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.splash-image {
+  max-width: 500px;
+  width: 90%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.splash-text {
+  max-width: 900px;
+  margin-top: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.splash-text h1 {
+  font-family: 'New Rocker', cursive;
+  font-weight: 400;
+  font-size: 4rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.splash-text h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.splash-text p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #ffa0ff;
+  line-height: 1.6;
+  white-space: pre-line;
+  text-align: justify;
+}
+
+.inline-white {
+  color: #ffffff;
+}
+
+.inline-bold {
+  font-weight: bold;
+}
+
+.inline-italic {
+  font-style: italic;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.list {
+  list-style: none;
+  padding-left: 1.2em;
+}
+
+.list li {
+  position: relative;
+  margin-bottom: 0.6em;
+  padding-left: 1.5em;
+  text-align: justify;
+  color: #5dcdff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
+}
+
+.list li::before {
+  content: "⚔️";
+  position: absolute;
+  left: -1.2em;
+  top: 0;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.apply-button {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #5dcdff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-family: 'New Rocker', cursive;
+  font-size: 2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.apply-button:hover {
+  background-color: #9ee4ff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 14px;
+  }
+
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-size: 100% auto;
+    background-position: top center;
+  }
+
+  .splash-container {
+    position: relative;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 40px 15px;
+    z-index: 2;
+  }
+
+  .splash-logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .splash-image {
+    width: 65%;
+    margin: 20px 0;
+  }
+
+  .splash-text h1 {
+    font-size: 2rem;
+  }
+
+  .splash-text p,
+  .list li {
+    font-size: 1rem;
+  }
+
+  .apply-button {
+    font-size: 1.5rem;
+    padding: 0.6em 1.2em;
+  }
+}
