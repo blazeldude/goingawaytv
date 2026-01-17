@@ -8,10 +8,12 @@ let youtubeAPIReady = false;
 let checkEndInterval = null;
 let isSettingUpPlayer = false;
 let currentVideoIndex = null;
+let isAnimationPlaying = false;
 
 // DOM elements
 const videoFrame = document.getElementById('videoFrame');
-const randomBtn = document.getElementById('randomBtn');
+const randomBtn = document.getElementById('randomBtn'); // This is now a video element
+const resumeBtn = document.getElementById('resumeBtn');
 const autoplayBtn = document.getElementById('autoplayBtn');
 const resetBtn = document.getElementById('resetBtn');
 const videoTitle = document.getElementById('videoTitle');
@@ -20,6 +22,8 @@ const authorLink = document.getElementById('authorLink');
 const nowPlaying = document.getElementById('nowPlaying');
 const progressBar = document.getElementById('progressBar');
 const progressText = document.getElementById('progressText');
+const fullscreenVideo = document.querySelector('.fullscreen-video');
+const spinText = document.querySelector('.spin-text');
 
 // YouTube API callback
 window.onYouTubeIframeAPIReady = function() {
@@ -27,7 +31,43 @@ window.onYouTubeIframeAPIReady = function() {
   console.log('YouTube API Ready');
 };
 
-// Load saved progress from localStorage
+// Also check if API is already loaded (in case callback already fired)
+if (window.YT && window.YT.Player) {
+  youtubeAPIReady = true;
+  console.log('YouTube API was already ready');
+}
+
+// Handle the webM button click and animation
+randomBtn.addEventListener('click', function() {
+  if (isAnimationPlaying) return; // Prevent multiple clicks during animation
+  
+  isAnimationPlaying = true;
+  randomBtn.style.pointerEvents = 'none'; // Disable clicking during animation
+  
+  // Play the animation
+  randomBtn.play();
+});
+
+// When the animation ends, trigger the random video functionality
+randomBtn.addEventListener('ended', function() {
+  isAnimationPlaying = false;
+  randomBtn.style.pointerEvents = 'auto'; // Re-enable clicking
+  
+  // Switch to small wheel
+  randomBtn.classList.add('small');
+  randomBtn.src = '../img/Spinningwheelsmall.webm';
+  
+  // Hide the "Spin the wheel..." text
+  spinText.classList.add('hidden');
+  
+  // Change background to black
+  fullscreenVideo.classList.add('playing');
+  
+  // Now execute the actual random video pick
+  pickRandomVideo();
+});
+
+// Load saved progress
 function loadProgress() {
   const savedWatched = localStorage.getItem('watchedVideos');
   const savedFirstClick = localStorage.getItem('firstClick');
@@ -44,7 +84,6 @@ function loadProgress() {
   
   if (savedAutoplayEnabled !== null) {
     autoplayEnabled = savedAutoplayEnabled === 'true';
-    // Update UI to match saved state
     if (autoplayEnabled) {
       autoplayBtn.textContent = 'Autoplay: ON';
       autoplayBtn.style.background = 'rgba(30,255,0,0.8)';
@@ -54,16 +93,12 @@ function loadProgress() {
     }
   }
   
-  // Check if we have a saved video to resume
   const savedCurrentVideoIndex = localStorage.getItem('currentVideo');
   if (savedCurrentVideoIndex) {
     const videoIndex = parseInt(savedCurrentVideoIndex);
     if (videoIndex >= 0 && videoIndex < videos.length) {
-      // Change RANDOM button to RESUME
-      randomBtn.textContent = 'Resume?';
       console.log('Resume available for video index:', videoIndex);
       
-      // Move buttons to center when RESUME is available
       const container = document.querySelector('.button-container');
       container.style.top = '50%';
       container.style.left = '50%';
@@ -71,7 +106,12 @@ function loadProgress() {
       container.style.right = 'auto';
       container.style.transform = 'translate(-50%, -50%)';
       
-      // Reset firstClick so buttons will move to corner when video plays
+      // Grey out wheel and show RESUME button
+      randomBtn.classList.add('disabled');
+      resumeBtn.style.display = 'block';
+      spinText.classList.add('hidden');
+      fullscreenVideo.classList.remove('playing');
+      
       firstClick = true;
     }
   }
@@ -88,8 +128,6 @@ function restoreVideo(videoIndex) {
   console.log('Video index:', videoIndex);
   console.log('Video platform:', video.Platform);
   console.log('Embed URL:', embedUrl);
-  console.log('Autoplay enabled:', autoplayEnabled);
-  console.log('First click:', firstClick);
 
   videoFrame.src = embedUrl;
   
@@ -103,11 +141,18 @@ function restoreVideo(videoIndex) {
 
   nowPlaying.style.display = 'block';
 
-  // Always move buttons to corner when video is playing
+  // Switch to small wheel after resume
+  randomBtn.classList.remove('disabled');
+  randomBtn.classList.add('small');
+  randomBtn.src = '../img/Spinningwheelsmall.webm';
+  resumeBtn.style.display = 'none';
+  spinText.classList.add('hidden');
+  fullscreenVideo.classList.add('playing');
+
   moveButtonToCorner();
 }
 
-// Save progress to localStorage
+// Save progress
 function saveProgress(currentVideoIndex) {
   localStorage.setItem('watchedVideos', JSON.stringify(watched));
   localStorage.setItem('firstClick', firstClick.toString());
@@ -182,7 +227,6 @@ function cleanupPlayer() {
 
 // Setup video end detection based on platform
 function setupVideoEndDetection(platform, embedUrl) {
-  // Prevent multiple simultaneous setups
   if (isSettingUpPlayer) {
     console.log('Player setup already in progress, skipping duplicate call for:', platform);
     return;
@@ -204,7 +248,6 @@ function setupVideoEndDetection(platform, embedUrl) {
     setupOtherPlayer();
   }
   
-  // Reset setup flag after a reasonable delay
   setTimeout(() => {
     isSettingUpPlayer = false;
   }, 3000);
@@ -212,7 +255,6 @@ function setupVideoEndDetection(platform, embedUrl) {
 
 // Setup YouTube player with end detection
 function setupYouTubePlayer() {
-  // Initialize retry counter if not exists
   if (!window.youtubeRetryCount) {
     window.youtubeRetryCount = 0;
   }
@@ -221,7 +263,6 @@ function setupYouTubePlayer() {
     console.log('YouTube API not ready yet, will retry...');
     window.youtubeRetryCount++;
     
-    // Stop retrying after 10 attempts
     if (window.youtubeRetryCount >= 10) {
       console.log('YouTube API retry limit reached, giving up');
       isSettingUpPlayer = false;
@@ -232,7 +273,6 @@ function setupYouTubePlayer() {
     return;
   }
   
-  // Clear any existing retry timeouts to prevent cascading retries
   if (window.youtubeRetryTimeout) {
     clearTimeout(window.youtubeRetryTimeout);
   }
@@ -246,7 +286,7 @@ function setupYouTubePlayer() {
     });
     console.log('YouTube player setup complete');
     isSettingUpPlayer = false;
-    window.youtubeRetryCount = 0; // Reset counter on success
+    window.youtubeRetryCount = 0;
   } catch (e) {
     console.log('Error setting up YouTube player:', e);
     isSettingUpPlayer = false;
@@ -259,7 +299,6 @@ function onYouTubeError(event) {
 }
 
 function onYouTubeStateChange(event) {
-  // YT.PlayerState.ENDED = 0
   if (event.data === 0) {
     console.log('YouTube video ended');
     onVideoEnded();
@@ -269,14 +308,12 @@ function onYouTubeStateChange(event) {
 
 // Setup Vimeo player with end detection
 function setupVimeoPlayer() {
-  // Double-check that we actually have a Vimeo video
   if (currentPlatform !== 'vimeo') {
     console.log('WARNING: setupVimeoPlayer called but platform is:', currentPlatform, '- aborting');
     isSettingUpPlayer = false;
     return;
   }
   
-  // Wait for Vimeo iframe to fully load
   setTimeout(() => {
     try {
       if (typeof Vimeo === 'undefined') {
@@ -287,7 +324,6 @@ function setupVimeoPlayer() {
       
       currentPlayer = new Vimeo.Player(videoFrame);
       
-      // Setup event listeners
       currentPlayer.on('ended', function() {
         console.log('Vimeo video ended');
         onVideoEnded();
@@ -299,14 +335,12 @@ function setupVimeoPlayer() {
       
       currentPlayer.on('pause', function() {
         console.log('Vimeo video paused');
-        // When controls are disabled, pause likely means video ended or interaction blocked
         if (videoFrame.src.includes('controls=0')) {
           console.log('Controls disabled - treating pause as video end');
           onVideoEnded();
         }
       });
       
-      // Verify the player is ready
       currentPlayer.ready().then(function() {
         console.log('Vimeo player setup complete');
         isSettingUpPlayer = false;
@@ -324,12 +358,10 @@ function setupVimeoPlayer() {
 
 // Setup detection for OTHER platform (time-based)
 function setupOtherPlayer() {
-  // The loom.cafe video "Ozwomp's Voyage in Cyberspace" is 6 minutes 13 seconds
-  const videoDuration = (6 * 60 + 13) * 1000; // Convert to milliseconds: 373000ms
+  const videoDuration = (6 * 60 + 13) * 1000;
   
   console.log('Setting up OTHER player with duration:', videoDuration / 1000, 'seconds');
   
-  // Set a timeout to trigger video end after the exact duration
   checkEndInterval = setTimeout(() => {
     console.log('OTHER video ended (time-based)');
     onVideoEnded();
@@ -341,8 +373,8 @@ function onVideoEnded() {
   console.log('Video ended, autoplay enabled:', autoplayEnabled);
   
   if (autoplayEnabled) {
-    // Small delay to ensure proper cleanup
     setTimeout(() => {
+      // Skip animation, just pick next video directly
       pickRandomVideo();
     }, 100);
   }
@@ -357,8 +389,6 @@ async function loadVideos() {
     
     loadProgress();
     updateCounter();
-    randomBtn.disabled = false;
-    autoplayBtn.disabled = false;
     
     if (!firstClick) {
       moveButtonToCorner();
@@ -375,10 +405,7 @@ function updateCounter() {
   const watchedCount = watched.length;
   const percentage = total > 0 ? Math.round((watchedCount / total) * 100) : 0;
   
-  // Update progress bar width
   progressBar.style.width = percentage + '%';
-  
-  // Update progress text
   progressText.textContent = percentage + '%';
 }
 
@@ -408,28 +435,26 @@ function resetToStart() {
   autoplayEnabled = false;
   autoplayBtn.textContent = 'Autoplay: OFF';
   autoplayBtn.style.background = 'rgba(255,255,255,0.3)';
-  randomBtn.textContent = 'Random'; // Reset button text
+  
+  // Reset to big wheel and show text
+  randomBtn.classList.remove('small');
+  randomBtn.classList.remove('disabled'); // Ungrey the wheel
+  randomBtn.src = '../img/SpinningWheeBig.webm';
+  randomBtn.currentTime = 0;
+  randomBtn.pause();
+  spinText.classList.remove('hidden');
+  
+  // Hide resume button
+  resumeBtn.style.display = 'none';
+  
+  // Show background image again
+  fullscreenVideo.classList.remove('playing');
   
   clearProgress();
   updateCounter();
 }
 
 function pickRandomVideo() {
-  // Check if button says RESUME (meaning we have a saved video)
-  if (randomBtn.textContent === 'Resume?') {
-    const savedCurrentVideo = localStorage.getItem('currentVideo');
-    if (savedCurrentVideo) {
-      const videoIndex = parseInt(savedCurrentVideo);
-      if (videoIndex >= 0 && videoIndex < videos.length) {
-        console.log('Resuming saved video:', videoIndex);
-        restoreVideo(videoIndex);
-        // Change button back to RANDOM after resuming
-        randomBtn.textContent = 'Random';
-        return;
-      }
-    }
-  }
-
   if (watched.length === videos.length) {
     resetToStart();
     return;
@@ -443,10 +468,8 @@ function pickRandomVideo() {
   let video = videos[randomIndex];
   const embedUrl = convertToEmbedUrl(video.Link, video.Platform);
 
-  // Set iframe src
   videoFrame.src = embedUrl;
   
-  // Setup end detection after a short delay to allow iframe to load
   setTimeout(() => {
     setupVideoEndDetection(video.Platform, embedUrl);
   }, 1000);
@@ -459,6 +482,12 @@ function pickRandomVideo() {
 
   if (firstClick) {
     firstClick = false;
+    // Switch to small wheel after first video plays
+    randomBtn.classList.remove('disabled');
+    randomBtn.classList.add('small');
+    randomBtn.src = '../img/Spinningwheelsmall.webm';
+    spinText.classList.add('hidden');
+    fullscreenVideo.classList.add('playing');
     moveButtonToCorner();
   }
 
@@ -481,9 +510,20 @@ function toggleAutoplay() {
 }
 
 // Event listeners
-randomBtn.addEventListener('click', pickRandomVideo);
 autoplayBtn.addEventListener('click', toggleAutoplay);
 resetBtn.addEventListener('click', resetToStart);
+
+// Resume button click handler
+resumeBtn.addEventListener('click', function() {
+  const savedCurrentVideo = localStorage.getItem('currentVideo');
+  if (savedCurrentVideo) {
+    const videoIndex = parseInt(savedCurrentVideo);
+    if (videoIndex >= 0 && videoIndex < videos.length) {
+      console.log('Resuming saved video:', videoIndex);
+      restoreVideo(videoIndex);
+    }
+  }
+});
 
 // Initialize
 loadVideos();
