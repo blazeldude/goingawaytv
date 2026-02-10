@@ -249,8 +249,8 @@ html, body {
   }
 
   .random-video-btn {
-    width: clamp(280px, 80vw, 400px);
-    height: clamp(280px, 80vw, 400px);
+    width: clamp(280px, 90vw, 400px);
+    height: clamp(280px, 90vw, 400px);
   }
 
   .random-video-btn.small {
