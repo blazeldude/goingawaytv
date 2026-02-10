@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Going Away.tv Locked In</title>
+  <link rel="icon" type="image/png" href="../img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="shortcut icon" href="../img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+  <link rel="manifest" href="../img/site.webmanifest" />
+  <link rel="stylesheet" href="styleNEW.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Oxanium:wght@200..800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <section class="fullscreen-video">
+    <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+    <div class="logo">
+      <a href="../index.html">
+        <video autoplay loop muted playsinline>
+    <source src="../img/gatvlogoanimated.webm" type="video/webm">
+  </video>
+      </a>
+    </div>
+    
+    
+    <div class="overlay">
+      <div class="button-container">
+        <div class="wheel-wrapper">
+          <video id="randomBtn" class="random-video-btn" playsinline>
+            <source src="../img/SpinningWheeBig.webm" type="video/webm">
+          </video>
+          <button id="resumeBtn" class="resume-btn" style="display: none;">RESUME</button>
+          <p class="spin-text">Spin the wheel...</p>
+        </div>
+        <button id="autoplayBtn">Autoplay: OFF</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="now-playing" id="nowPlaying">
+        <strong>Now Playing:</strong><br>
+        <span id="videoTitle"></span><br>
+        <a id="authorLink" href="#" target="_blank">
+          <span id="videoAuthor"></span>
+        </a>
+      </div>
+
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-text" id="progressText">0%</div>
+      </div>
+    </div>
+  </section>
+  <script src="Randomscript_simple.js"></script>
+</body>
+</html>

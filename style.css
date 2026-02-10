@@ -24,6 +24,18 @@ a:hover {
   text-decoration: underline;
 }
 
+a2 {
+  color: #ffffff;
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  padding-top: .5em;
+  font-size: 25px;
+  min-width: 300px;
+  text-shadow: #000000 0px 0 10px;
+}
+
 .background-container {
   width: 100%;
   height: 100%;
@@ -42,6 +54,23 @@ a:hover {
   height: auto;
   pointer-events: none;
   z-index: 1;
+  animation: float infinite ease-in-out;
+
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -30px);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  75% {
+    transform: translate(40px, 10px);
+  }
 }
 
 .video-wrapper {
@@ -61,6 +90,21 @@ a:hover {
   border: 0;
 }
 
+.logo{
+  display: block;
+  position: absolute;
+  top: clamp(10px, 2vw, 20px);
+  left: clamp(10px, 2vw, 20px);
+  padding: 10px 10px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.logo video {
+  width: clamp(80px, 12vw, 140px);
+  height: auto;
+}
+
 .splash-container {
   position: relative;
   z-index: 1;
@@ -70,10 +114,31 @@ a:hover {
   padding: 3vw;
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  gap: 3vw;
+  box-sizing: border-box;
+}
+
+.splash-logo {
+  max-width: 1100px;
+  width: 50%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-sizing: border-box;
+}
+
+.side-button {
+  height: auto;
+  cursor: pointer;
 }
 
 .countdown-container {
@@ -131,9 +196,10 @@ dialog {
   border: none;
   position: fixed;
   padding: 0;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   overflow: visible;
+  
   
 }
 
@@ -144,7 +210,7 @@ dialog {
   padding: 3vw;
   border-radius: 10px;
   font-family: 'Nunito Sans', sans-serif;
-  font-size: calc(0.6rem + 0.3vw);  
+  font-size: calc(0.55rem + 0.3vw);  
   text-align: left;
   box-shadow: #00000098 4px 4px 10px;
 }
@@ -171,7 +237,7 @@ dialog {
 }
 
 .dialog-content p {
-  margin: 1.5% 0;
+  margin: 1% 0;
 }
 
 
@@ -191,7 +257,7 @@ dialog {
   all: unset;
   color: #000;
   font-weight: bold;
-  font-size: calc(0.6rem + 0.3vw);
+  font-size: calc(0.55rem + 0.3vw);
   cursor: pointer;
   text-decoration-color: #000;
 }
@@ -271,8 +337,8 @@ dialog::backdrop {
 }
 
 .bottom-left a {
-  display: inline;       /* only text is clickable */
-  padding: 0;            /* remove extra clickable padding */
+  display: inline;
+  padding: 0; 
 }
 
 .list {
@@ -317,10 +383,25 @@ dialog::backdrop {
 }
 
 @media (max-width: 768px) {
+
+  .splash-container {
+  flex-direction: column;
+}
+
+  .splash-logo {
+  width: 90%;
+}
+
+.side-button {
+  width: clamp(100px, 40vw, 150px);
+}
+
+
   dialog {
     position: fixed;
     margin-left: 6vw;
     margin-right: 5vw;
+    overflow: visible;
   }
 
   .dialog-content img {
@@ -331,6 +412,18 @@ dialog::backdrop {
   .dialog-content { 
     font-size: calc(0.6rem + 0.3vw);
     padding: 5vw;
+    padding-bottom: 30px;
+    max-height: 80vh;
+    overflow: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog-scroll { 
+    max-height: calc(85vh - 10vw - 30px);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .dialog-content::after {

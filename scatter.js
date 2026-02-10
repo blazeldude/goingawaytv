@@ -3,8 +3,8 @@ window.addEventListener('load', function () {
   const imgSrcs = ['img/PopUpBadsmall.png', 'img/PopUpGoodsmall.png'];
   const bgContainer = document.querySelector('.background-container');
 
-  const minDistance = 150;   // distance to avoid clustering
-  const placed = [];         // track positions
+  const minDistance = 150;
+  const placed = [];
 
   function isTooClose(x, y) {
     return placed.some(p => {

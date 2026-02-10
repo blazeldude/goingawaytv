@@ -19,29 +19,38 @@
 </head>
 <body>
 
-  <div class="background-container"></div>
+<div class="background-container"></div>
+
+<div class="logo">
+<video autoplay loop muted playsinline>
+<source src="../img/gatvlogoanimated.webm" type="video/webm">
+</video>
+</div>
 
 <div class="splash-container">
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/cxcBqFhXxqw" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
+
+   
+<div class="button-container">
+  <a href="Spin\index.html">
+  <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="side-button" loop muted playsinline>
+    <source src="img/Spinningwheelsmall.webm" type="video/webm"> 
+  </video>
+</a>
+  <a2>Spin The Wheel?</a2>    
+</div>
+
+  <img src="img/GATVnewLOGO.png" alt="Your Logo" class="splash-logo" />
+
+  <div class="button-container">
+    <a href="https://www.youtube.com/live/cxcBqFhXxqw?si=0sUrpzngFBGtV_sT" target="_blank" rel="noopener noreferrer">
+    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="side-button"  loop muted playsinline>
+    <source src="img/ScreenButton.webm" type="video/webm">
+    </video>
+    </a>
+    <a2>Watch The Stream?</a2>  
     </div>
 
-<a 
-      id="watch-youtube" 
-      href="https://www.youtube.com/live/cxcBqFhXxqw?si=8ZYc3nRbGxXh-3Lo" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="countdown-container"
-    >
-      Watch on YouTube
-    </a>
+    </div>
 
 <div class="bottom-left">
   <a href="https://www.instagram.com/goingaway.tv/" target="_blank" rel="noopener noreferrer">@goingaway.tv</a>
@@ -50,29 +59,27 @@
 
 <dialog closedby="any">
     <div class="dialog-content">
+      <div class="dialog-scroll">
 <h1><img src="img/Information.png">Going Away.tv: Locked In <span class="inline-red">[LIVE 17/01/2026]</span></h1> 
 <p>Don't change the channel, adjust your set, or scroll past. Fuck it... we'll do it live.</p>
 
-<p>The Director Generals called upon artists far and wide to send in their moving-image works, and they did. All 117 of them.</p>
-<p>Now they're going to watch every single one, <span class="inline-bold inline-red">LIVE</span>, however long it takes.</p>
-<p>You are invited to watch along as this highly scientific experiment explores the irreversible effects of being locked in a room with an obscene amount of video art.</p>
-<p>This marathon will be hosted by Artist 
-  
-  <a href="http://www.marcblazel.com/" target="_blank" rel="noopener noreferrer">Marc Blazel</a> 
-    and Writer/Curator 
-  <a href="https://alexanderharding.co.uk/" target="_blank" rel="noopener noreferrer">Alexander Harding</a>. 
-  
-  Expect a blend of critique, chat, live segments, sleep deprivation and whatever else happens when you're truly locked in.</p>
-<p><b>Going Away.tv: Locked In</b> will be live all day (and probably night) on the <span class="inline-bold wavy-underline">17th January 2026</span>, right here at Going Away.tv.</p>
-<p>Stay tuned...</p>
+<p>The Director Generals called upon artists far and wide to send in their moving-image works, and they did. A lot of them did.</p>
+<p>They then watched every single one, <span class="inline-bold inline-red">LIVE</span></p>
+<p>Watch along as this highly scientific experiment explores the irreversible effects of being locked in a room with an obscene amount of video art.</p>
+  Expect a blend of critique, chat, special guests, sleep deprivation and whatever else happens when you're truly locked in.</p>
+<p><b>Going Away.tv: Locked In</b> was live all day (and night) on the <span class="inline-bold wavy-underline">17th January 2026</span>, right here at Going Away.tv.</p>
+<p>Stay tuned for more shenanigans...</p>
 
 <h2>About Going Away.tv</h2>
-<p>Going Away.tv is an online platform that previously hosted live streamed artists' moving image as a 24/7 stream. Conceived as an embassy for the 2019 edition of the Wrong Biennale, It was later reconfigured as a series of live events at Arebyte Gallery, London. This is its evolution.
+<p>Going Away.tv is an online platform dedicated to live streamed artists' moving image. Previously a 24/7 stream and event series, this is its evolution.
 </p>
 <p>Director generals: <a href="http://www.marcblazel.com/" target="_blank" rel="noopener noreferrer">Marc Blazel</a> 
     and 
   <a href="https://alexanderharding.co.uk/" target="_blank" rel="noopener noreferrer">Alexander Harding</a>.</p>
 
+<h2>Featured Artists</h2>
+<p id="artist-links-paragraph"></p>
+</div>
 <button class="close">x</button>
 </div>
 </dialog>
@@ -81,14 +88,43 @@
 <button class="info-button" id="any-btn">
   <img src="img/Information.png">
 </button>
- 
-
-
 </div>
-
-<script src="scatter.js"></script>
-<script src="timer.js"></script>
 <script src="infobutton.js"></script>
+
+<script>
+  const container = document.getElementById("artist-links-paragraph");
+
+fetch("Spin/videos.json")
+  .then(response => response.json())
+  .then(data => {
+    const uniqueArtists = {};
+    data.forEach(artist => {
+      if (!uniqueArtists[artist.Name.trim()]) {
+        uniqueArtists[artist.Name.trim()] = artist.Website || null;
+      }
+    });
+
+    const sortedArtists = Object.entries(uniqueArtists)
+      .sort((a, b) => a[0].localeCompare(b[0]));
+
+    const links = sortedArtists.map(([name, website]) => {
+      if (website) {
+        const a = document.createElement("a");
+        a.href = website;
+        a.textContent = name;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        return a.outerHTML;
+      } else {
+        return name; 
+      }
+    });
+
+    container.innerHTML = links.join(" / ");
+  })
+  .catch(err => console.error("Failed to load artist JSON:", err));
+
+</script>
 
 </body>
 </html>
