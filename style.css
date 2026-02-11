@@ -366,7 +366,7 @@ dialog::backdrop {
 
   .splash-container {
   flex-direction: column;
-
+  min-height: 100svh;
 }
 
   .splash-logo {
