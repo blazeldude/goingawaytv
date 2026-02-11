@@ -338,6 +338,25 @@ html, body {
 
 @media (max-width: 900px) and (orientation: landscape) {
   
+  .wheel-wrapper {
+  margin-top: 40px;
+}   
+  
+  .random-video-btn {
+    width: clamp(180px, 90vw, 200px);
+    height: clamp(180px, 90vw, 200px);
+  }
+  
+   .spin-text {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    top: -40px;
+  }
+
+    .resume-btn {
+    font-size: clamp(2rem, 8vw, 3rem);
+    padding: 0.3em 0.8em;
+  }
+  
   .random-video-btn.small {
     width: clamp(100px, 35vw, 130px);
     height: clamp(100px, 35vw, 130px);
