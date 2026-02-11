@@ -15,7 +15,6 @@ a {
   display: inline-block;
   padding: 1em 0 0.2em 0;
   font-size: calc(12px + 1.5vw);
-  min-width: 300px;
   text-shadow: #000000 0px 0 10px;
 }
 
@@ -99,6 +98,7 @@ a2 {
   flex-direction: row;
   align-items: center;
   text-align: center;
+  gap: 3vw;
 }
 
 .splash-logo {
@@ -113,7 +113,6 @@ a2 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  flex-shrink: 0;
 }
 
 .side-button {
@@ -367,6 +366,7 @@ dialog::backdrop {
 
   .splash-container {
   flex-direction: column;
+  gap: 0vh;
 }
 
   .splash-logo {
@@ -437,3 +437,15 @@ dialog::backdrop {
 
 }
 }
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .splash-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0vw;
+  }
+  
+  .splash-logo {
+    width: 50%;
+  }
+  }
