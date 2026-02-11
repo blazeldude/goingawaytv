@@ -335,3 +335,30 @@ html, body {
     width: clamp(60px, 15vw, 100px);
   }
 }
+
+@media (max-width: 900px) and (orientation: landscape) {
+  
+  .random-video-btn.small {
+    width: clamp(100px, 35vw, 130px);
+    height: clamp(100px, 35vw, 130px);
+  }
+
+  .now-playing {
+  font-size: 1.5vw;
+  }
+  
+    #autoplayBtn, #resetBtn {
+    font-size: clamp(.8rem, 3vw, 1rem);
+    padding: 0.3em 0.8em;
+  }
+
+    .progress-container {
+    width: clamp(150px, 20vw, 200px);
+    height: 20px;
+  }
+
+    .progress-text {
+    font-size: clamp(12px, 3.5vw, 16px);
+  }
+
+  }
