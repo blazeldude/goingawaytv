@@ -52,7 +52,6 @@ html, body {
   pointer-events: none;
 }
 
-/* WebM video button styling */
 .wheel-wrapper {
   position: relative;
   display: inline-block;

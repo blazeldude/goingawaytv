@@ -31,7 +31,7 @@ a2 {
   text-decoration: none;
   display: inline-block;
   padding-top: .5em;
-  font-size: clamp(.5em, 5vw, 1.5em);
+  font-size: clamp(.3em, 5vw, 1.5em);
   text-shadow: #000000 0px 0 10px;
 }
 
@@ -53,8 +53,6 @@ a2 {
   height: auto;
   pointer-events: none;
   z-index: 1;
-  animation: float infinite ease-in-out;
-
 }
 
 .video-wrapper {
@@ -100,27 +98,25 @@ a2 {
   flex-direction: row;
   align-items: center;
   text-align: center;
-  box-sizing: border-box;
 }
 
 .splash-logo {
   max-width: 1100px;
   width: 50%;
   height: auto;
-  margin-bottom: 10px;
 }
 
 .button-container {
-  width: 60%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .side-button {
-  width: clamp(120px, 12vw, 200px);
+  width: clamp(100px, 12vw, 200px);
   height: auto;
   cursor: pointer;
 }
@@ -370,10 +366,11 @@ dialog::backdrop {
 
   .splash-container {
   flex-direction: column;
+
 }
 
   .splash-logo {
-  width: 90%;
+  width: 80%;
 }
 
   dialog {
